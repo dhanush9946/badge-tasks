@@ -5,6 +5,11 @@ function Todo() {
   const [todos,setTodos]=useState([]);
   const [editingIndex,setEditingIndex]=useState(null);
   const [editingText,setEditingText]=useState('');
+  const [search,setSearch]=useState('');
+
+  const filteredTodo = todos.filter((t)=>(
+    t.toLowerCase().includes(search.toLowerCase())
+  ))
 
   const handleEdit = (index)=>{
     setEditingIndex(index);
@@ -39,6 +44,15 @@ function Todo() {
 
   return (
     <div>
+      <label>Search:</label>
+      <input 
+      type="text"
+      placeholder='search todo'
+      value={search}
+      onChange={(e)=>setSearch(e.target.value)} 
+      />
+      <br />
+      <br />
       <label>Enter todo:</label>
       <input 
       type="text" 
@@ -52,7 +66,7 @@ function Todo() {
       <br />
        <div>
         <ul>
-          {todos.map((todo,index)=>(
+          {filteredTodo.map((todo,index)=>(
             <li key={index}>
               {editingIndex === index? (
                 <>
