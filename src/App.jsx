@@ -8,11 +8,12 @@ import SignUp from './training/SignUp'
 import Selection from './training/Selection'
 import Todo from './training/Todo'
 import Timer from './training/Timer'
+import Traffic from './training/Traffic'
 
 function App() {
   return (
     <div>
-      <Timer />
+      <Traffic />
     </div>
   )
 }
