@@ -1,10 +1,11 @@
 import React from 'react'
 import Traffic3 from './training/Traffic3'
+import Color from './training/Color'
 
 function App() {
   return (
     <div>
-      <Traffic3 />
+      <Color />
     </div>
   )
 }
